@@ -1,0 +1,38 @@
+<section class="hero py-16">
+    <div class="container mx-auto flex items-center justify-between">
+    <div class="w-1/2">
+        <h6 class="text-lg"><em>Hungry ?</em></h6>
+        <h1 class="text-6xl font-bold">Dont wait !</h1>
+        <button class="px-6 py-2 font-bold mt-4 btn-primary"><a href="#navbar">Order Now</a></button>
+    </div> 
+    <div class="w-1/2">
+        <img src="/img/home.png" alt="">
+    </div>
+
+    </div>
+</section>
+
+<section id="navbar" class="menu container  mx-auto py-8">
+    <h1 class="text-xl font-bold mb-8">All dishes</h1>
+
+        <div class="grid grid-cols-4 col-gap-12 row-gap-16">
+            <%delish.forEach(function(delish) { %>
+            <div class="w-64">
+                <img class="h-40 mb-4 mx-auto" src="/img/<%= delish.image %>" alt="">
+                <div class="text-center">
+                    <h2 class="mb-4 text-lg"><%= delish.name %></h2>
+                    <span class="size py-1 px-4 rounded-full uppercase text-xs"><%= delish.size %></span>
+                    <div class="flex items-center justify-around mt-6">
+                        <span class="font-bold text-lg">Rs.<%= delish.price %></span>
+                        <button data-delish="<%= JSON.stringify(delish) %>" class="add-to-cart px-2 py-3 rounded-full flex items-center font-bold">
+                            <span>+</span>
+                            <span class="ml-4">Add</span>
+                        </button>
+                    </div>
+                </div>
+                <br>
+            </div>
+    <% }) %>    
+
+    </div>
+</section>
